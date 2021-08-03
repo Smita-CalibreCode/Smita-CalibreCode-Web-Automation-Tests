@@ -13,7 +13,7 @@ import { max } from 'moment';
 
 var price2=200;
 
-describe("WeShop - Create an account",() =>{
+describe.skip("WeShop - Create an account",() =>{
     it("Verify that the user is redirected to the Create your account step when Create an account button is clicked", ()=>{
         browser.url(testData.weshop.homeurl);
         expect(homePage.welcome.isVisible()).to.eql(true);
