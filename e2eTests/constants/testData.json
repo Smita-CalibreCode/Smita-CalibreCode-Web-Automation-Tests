@@ -1,0 +1,59 @@
+{
+	"weshop": {
+		"homeurl":"https://uat.we.shop/",
+		"login":"https://uat.we.shop/s/login",
+		"newsfeed":"https://uat.we.shop/s/newsfeed/feed"
+    },
+
+	"login":{
+		"email":"smita@calibrecode.com",
+		"username":"smita-patil",
+		"password":"12345678",
+		"welcome":"Welcome back",
+		"accountsetting":"Account settings",
+		"profiledetails":"Profile details updated successfully.",
+		"followinglabel":"Following",
+		"followerslabel":"Followers"
+	},
+
+	"signup":{
+       "welcome":"Create your account",
+	   "firstname":"John",
+	   "lastname":"Doe",
+	   "email":"jo",
+	   "password":"Ron@12345",
+	   "createpassword":"Choose your ********",
+	   "birhdayStep": "What's your birthday?",
+	   "genderStep":"Which fits you best?",
+	   "usernameStep":"Choose your @",
+	   "lastStep":"And the last bits..."
+	},
+
+	"newsfeed":{
+        "peopleknow":"People you may know"
+	},
+
+    "product":{
+		"name":"shirt",
+		"showinfresult":"Showing results for shirt white",
+		"retailername":"ebay"
+	},
+
+	"filter":{
+        "minprice": "100",
+		"maxprice": "200"
+	},
+	
+	"post":{
+		"RAP": "Recommend a Product",
+		"AAQ": "Ask a Question",
+		"videoUrl": "https://www.youtube.com/watch?v=qSlGMK9fpMs",
+		"newpost":"Posted a few seconds ago",
+		"question":"Help me to find cool shirt",
+		"recommend":"Cool laptop please check once"
+	},
+
+	"profile":{
+		"firstname": "harry"
+	}
+}
