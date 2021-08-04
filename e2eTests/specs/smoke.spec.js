@@ -13,7 +13,7 @@ import { max } from 'moment';
 
 var price2=200;
 
-describe.skip("WeShop - Create an account",() =>{
+describe("WeShop - Create an account",() =>{
     it("Verify that the user is redirected to the Create your account step when Create an account button is clicked", ()=>{
         browser.url(testData.weshop.homeurl);
         expect(homePage.welcome.isVisible()).to.eql(true);
@@ -30,7 +30,7 @@ describe.skip("WeShop - Create an account",() =>{
     })
 })
 
-describe.skip("WeShop - Login", () => {
+describe("WeShop - Login", () => {
 
     it("Verify that the user is redirected to the Login step when Login button is clicked", ()=>{
         browser.url(testData.weshop.homeurl);
@@ -67,7 +67,7 @@ describe.skip("WeShop - Login", () => {
 
 });
 
-describe.skip("WeShop - Account setting",() =>{
+describe("WeShop - setting",() =>{
     it("Verify that user is redirected to the Account setting page when clicked on Account setting option  ", ()=>{
         Login.login(testData.login.email, testData.login.password); //Login with e-mail and password
         browser.pause(1000);
@@ -92,25 +92,7 @@ describe.skip("WeShop - Account setting",() =>{
         expect(newsFeed.logo.isVisible()).to.eql(true);
     })
 
-    it("Verify that profile is updated successfully when user change the first name", ()=>{
-        browser.pause(2000);
-        Login.accountDropDown.waitForVisible();
-        Login.accountDropDown.click();
-        Login.visitProfile.waitForVisible();
-        Login.visitProfile.click();
-        Login.editProfile.waitForVisible();
-        Login.editProfile.click();
-        Login.firstName.waitForVisible();
-        Login.firstName.click();
-        Login.firstName.addValue('a');  
-        browser.scroll(0,400);
-        Login.saveChangeBtn.waitForVisible();
-        Login.saveChangeBtn.waitForVisible();
-        Login.saveChangeBtn.click();
-        browser.scroll(200);
-        Login.profileDetails.waitForVisible();
-        expect(Login.profileDetails.getText()).to.eql(testData.login.profiledetails); 
-    })
+    
 
     it("Verify that profile is updated successfully when user change the last name", ()=>{
         Login.lastName.waitForVisible();
@@ -123,7 +105,7 @@ describe.skip("WeShop - Account setting",() =>{
     })
 
     it("Verify that user is redirected to the wishlists page when clicked on wishlists label", ()=>{
-        browser.url(testData.weshop.homeurl);
+        browser.pause(2000);
         Login.accountDropDown.waitForVisible();
         Login.accountDropDown.click();
         Login.visitProfile.waitForVisible();
@@ -168,7 +150,7 @@ describe.skip("WeShop - Account setting",() =>{
 
 });
 
-describe.skip("WeShop - Create post RAP", ()=>{
+describe("WeShop - Create post RAP", ()=>{
     it("Verify that the user is redirected to the Recommend a product step when Recommend a product button is clicked",()=>{
         Login.login(testData.login.email,testData.login.password);
         browser.pause(2000);
@@ -202,10 +184,12 @@ describe.skip("WeShop - Create post RAP", ()=>{
         expect(postPage.newPost.getText()).eql(testData.post.newpost);
     })
 
-    
+    it("Verify that user can logout successfully when user select Logout option", ()=>{
+        Login.logout();
+    })
 });
 
-describe.skip("WeShop - Create post AAQ", ()=>{
+describe("WeShop - Create post AAQ", ()=>{
 
     it("Verify that the user is redirected to the Ask a Question step when Ask a question button is clicked",()=>{
         Login.login(testData.login.email,testData.login.password);
@@ -232,14 +216,14 @@ describe.skip("WeShop - Create post AAQ", ()=>{
         postPage.nextBtn.waitForVisible();
         postPage.nextBtn.click();
         browser.pause(5000);
-
         postPage.weshoptext.waitForVisible();
         expect(postPage.weshoptext.isVisible()).to.eql(true);
+        browser.scroll(0,10000);
         postPage.pleaseHelpMeToFind.waitForVisible();
         var count=1;
         while(count<= 15) {
-        const locatorValue = browser.element('.z2assy-2.QcYzO .question-editor-caption> div textarea').value;
-        browser.setValue('.z2assy-2.QcYzO .question-editor-caption> div textarea',['Backspace'])
+        const locatorValue = browser.element('.question-editor-caption__container textarea:nth-child(1)').value;
+        browser.setValue('.question-editor-caption__container textarea:nth-child(1)',['Backspace'])
         count++;
         } 
         postPage.pleaseHelpMeToFind.click();
@@ -251,30 +235,14 @@ describe.skip("WeShop - Create post AAQ", ()=>{
         expect(postPage.newPost.getText()).eql(testData.post.newpost);
     })
 
-    it.skip("Verify that question created about a recommendation is displayed appropriately in Newsfeed", ()=>{
-        browser.pause(2000);
-        postPage.askAQuestion.waitForVisible();
-        postPage.askAQuestion.waitForVisible();
-        postPage.askAQuestion.click();
-        expect(postPage.askaquestionHeading.getText()).to.eql(testData.post.AAQ);
-        postPage.lookingForRecomd.waitForVisible();
-        postPage.lookingForRecomd.click();
-        postPage.pleaseHelpMeToFind.waitForVisible();
-        postPage.pleaseHelpMeToFind.click();
-        postPage.pleaseHelpMeToFind.addValue(testData.post.question)
-        browser.scroll(0,10000);
-        postPage.postAQueBtn.waitForVisible();
-        postPage.postAQueBtn.click();
-        browser.pause(4000);
-        expect(postPage.newPost.getText()).eql(testData.post.newpost);
-    })
 
+   
     it("Verify that user can logout successfully when user select Logout option", ()=>{
         Login.logout();
     })
 });
 
-describe.skip("WeShop - NewsFeed", ()=> {
+describe("WeShop - NewsFeed", ()=> {
 
     it("Verify that feed is displayed appropriately when user scrolls through Newsfeed",()=>{
         Login.login(testData.login.email,testData.login.password);
@@ -287,7 +255,7 @@ describe.skip("WeShop - NewsFeed", ()=> {
     })
 });
 
-describe.skip("WeShop - Product",()=>{
+describe("WeShop - Product",()=>{
     it("Verify that the searched product name is displayed below the header Eg: showing results for Shirts", ()=>{
         Login.login(testData.login.email, testData.login.password);
         filterPage.serachBar.waitForVisible();
@@ -309,6 +277,15 @@ describe.skip("WeShop - Product",()=>{
         product.showingResult.waitForVisible();
         expect(product.showingResult.isVisible()).eql(true);
         expect(product.descp.isVisible()).to.eql(true);
+    })
+
+    it("Verify that the user is able to copy the product link when copy link button is clicked", ()=>{
+        product.share.waitForVisible();
+        product.share.click();
+    })
+
+    it("Verify that user can logout successfully when user select Logout option", ()=>{
+        Login.logout();
     })
 });
 
@@ -354,7 +331,7 @@ describe("WeShop - filter", ()=>{
     })
 
     it("Verify that the results matching to the selected retailer are displayed when the search is filtered", ()=>{
-        browser.pause(2000);
+        browser.pause(5000);
         filterPage.priceDownArrow.waitForVisible();
         filterPage.priceDownArrow.click();
         filterPage.retailerDownArrow.waitForVisible();
@@ -370,6 +347,74 @@ describe("WeShop - filter", ()=>{
         expect(productPage.retailerName.getText()).to.eql(testData.product.retailername);
     })
 })
+
+describe("WeShop - Account",()=>{
+    it("Verify that Change password button is activated when the user adds same password string in Password and Repeat password", ()=>{
+        Login.login(testData.login.email, testData.login.password); 
+        browser.pause(1000);
+        newsFeed.logo.waitForVisible();
+        expect(newsFeed.logo.isVisible()).to.eql(true);
+        browser.pause(1000);
+        Login.accountDropDown.waitForVisible();
+        Login.accountDropDown.click();
+        Login.accountSetting.waitForVisible();
+        Login.accountSetting.click();
+        Login.accountSettingLabel.waitForVisible();
+        expect(Login.accountSettingLabel.getText()).to.eql(testData.login.accountsetting);
+        browser.pause(2000);
+        browser.scroll(0,200);
+        if(Login.cookieBtn.isVisible()){
+            Login.cookieBtn.click();
+        }        
+        Login.logInDetails.waitForVisible();
+        Login.logInDetails.click();
+        Login.changePw.waitForVisible();
+        Login.changePw.click();
+        Login.changePw.setValue([testData.signup.password]);
+        Login.repeatPw.waitForVisible();
+        Login.repeatPw.click();
+        Login.repeatPw.setValue([testData.signup.password]);
+        expect(Login.changePwBtn.isVisible()).to.eql(true);
+    })
+
+    it("Verify that Change e-mail address button is enabled when user adds valid e-mail address", ()=>{
+        browser.pause(2000);
+        Login.emailaddress.waitForVisible();
+        Login.emailaddress.click();
+        Login.emailaddress.addValue('cc')
+        expect(Login.chnageEmailBtn.isVisible()).to.eql(true);
+    })
+
+    it("Verify that user is automatically logged out after Deactivate account step", ()=>{
+        browser.pause(2000);
+        browser.scroll(0,10000);
+        Login.deactivateAccount.waitForVisible();
+        Login.deactivateAccount.click();
+        Login.deactivateBtn.waitForVisible();
+        Login.deactivateBtn.click();
+        Login.deactivateAccountBtn.waitForVisible();
+        Login.deactivateAccountBtn.click();
+        browser.pause(1000);
+        expect(homePage.welcome.isVisible()).to.eql(true);
+    })
+});
+
+describe("WeShop - Profile",()=>{
+    it("Verify that user is redirected to the Edit profile Information step when Edit profile button is tapped", ()=>{
+        Login.login(testData.login.email, testData.login.password); 
+        browser.pause(1000);
+        newsFeed.logo.waitForVisible();
+        expect(newsFeed.logo.isVisible()).to.eql(true);
+        browser.pause(1000);
+        Login.accountDropDown.waitForVisible();
+        Login.accountDropDown.click();
+        Login.visitProfile.waitForVisible();
+        Login.visitProfile.click();
+        Login.editProfile.waitForVisible();
+        Login.editProfile.click();
+        expect(Login.editProfileHeading.getText()).to.eql(testData.profile.edit)
+    })
+});
 
 
 

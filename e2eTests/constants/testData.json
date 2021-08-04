@@ -54,6 +54,8 @@
 	},
 
 	"profile":{
-		"firstname": "harry"
+		"firstname": "harry",
+		"edit":"Edit your details",
+		"changemail":"som@maildrop.cc"
 	}
 }

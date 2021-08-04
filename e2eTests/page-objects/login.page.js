@@ -46,12 +46,56 @@ class Login extends Page{
         return $(".title-wrapper__container__content")
     }
 
+    get logInDetails(){
+        return $(".sc-1x1x871-0 .w9h3q4-0.kbYroH.icon")
+    }
+
+    get emailaddress(){
+        return $("input[placeholder='Enter email address']")
+    }
+
+    get changePw(){
+        return $("input[placeholder='Enter new password']")
+    }
+
+    get repeatPw(){
+        return $("input[placeholder='Repeat new password']")
+    }
+
+    get changePwBtn(){
+        return $(".MuiPaper-root:nth-child(3) .MuiAccordionDetails-root .sc-1wjn1q5-2:nth-child(2) .MuiButton-label")
+    }
+
+    get chnageEmailBtn(){
+        return $(".MuiPaper-root:nth-child(3) .MuiAccordionDetails-root .sc-1wjn1q5-2:nth-child(1) .MuiButton-label")
+    }
+
+    get deactivateAccount(){
+        return $(".sc-1x1x871-0.gHedX .w9h3q4-0.dHziTN.icon")
+    }
+
+    get deactivateBtn(){
+        return $(".sc-1cwhfm1-1.btKETs.styled-button-wrapper .MuiButton-label")
+    }
+
+    get deactivateAccountBtn(){
+        return $(".sc-1cwhfm1-1.VuKFI.styled-button-wrapper .MuiButton-label")
+    }
+
+    get cookieBtn(){
+        return $(".sc-1cwhfm1-1.eWnqOl.styled-button-wrapper .MuiButton-label")
+    }
+
     get editProfileInfo(){
         return $(".full-text")
     }
 
     get visitProfile(){
         return $(".nav-menu-profile__user__link")
+    }
+
+    get editProfileHeading(){
+        return $(".header")
     }
 
     get editProfile(){

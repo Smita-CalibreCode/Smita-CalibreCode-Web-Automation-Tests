@@ -123,7 +123,7 @@ class SignUp extends Page{
         this.clickToContinue.click();
         browser.pause(2000);
         expect(this.welcomeText.getText()).to.eql(testData.signup.usernameStep);
-        browser.pause(2000);
+        browser.pause(4000);
         this.clickToContinue.waitForVisible();
         this.clickToContinue.click();
         expect(this.welcomeText.getText()).to.eql(testData.signup.lastStep);

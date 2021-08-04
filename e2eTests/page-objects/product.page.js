@@ -23,6 +23,13 @@ get retailerName(){
     return $(".search-pod:nth-child(1) .sc-1932n6i-0.fLVmWj")
 }
 
+get share(){
+    return $(".search-pod:nth-child(1) .sc-8k7yx-0.hHXjhl:nth-child(2)")
+}
+
+get copy(){
+    return $(".MuiDialog-container:nth-child(3) .MuiButtonBase-root .MuiButton-label")
+}
 }
 
 export default new Product();

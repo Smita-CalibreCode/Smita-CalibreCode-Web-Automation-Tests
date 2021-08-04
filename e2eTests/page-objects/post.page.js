@@ -82,9 +82,9 @@ get lookingForRecomd(){
 }
 
 get pleaseHelpMeToFind(){
-    //return $(".question-editor-caption__container textarea:nth-child(1)")
+    return $(".question-editor-caption__container textarea:nth-child(1)")
      //return $(".z2assy-2.QcYzO .question-editor-caption textarea")
-     return $(".z2assy-2.QcYzO .question-editor-caption> div textarea")
+     //return $(".z2assy-2.QcYzO .question-editor-caption> div textarea")
 }
 
 get postAQueBtn(){
