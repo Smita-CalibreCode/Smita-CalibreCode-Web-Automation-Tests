@@ -2,7 +2,8 @@
 	"weshop": {
 		"homeurl":"https://uat.we.shop/",
 		"login":"https://uat.we.shop/s/login",
-		"newsfeed":"https://uat.we.shop/s/newsfeed/feed"
+		"newsfeed":"https://uat.we.shop/s/newsfeed/feed",
+		"resetpassword":"https://uat.we.shop/s/password/reset"
     },
 
 	"login":{
@@ -16,6 +17,22 @@
 		"followerslabel":"Followers"
 	},
 
+	"resetPwd":{
+        "resetPwdHeading":"Forgot your ********?",
+		"email":"bejun3@yopmail.com",
+		"reset":"Password reset",
+		"pwd":"67894563",
+		"successpopup":"Success!",
+		"confirmpopuptext":"Your password was successfully changed. Click here to log in with your new password.",
+	    "username":"beju Smith"
+	},
+
+	"resetEmail":{
+        "email":"yepee@yopmail.com",
+		"popup":"For this change to take effect, please follow the confirmation link emailed to you at dopee@yopmail.com - note that it may take up to a few minutes to receive the email",
+	    "successPopup":"Your email address has been updated."
+	},
+
 	"signup":{
        "welcome":"Create your account",
 	   "firstname":"John",
@@ -26,15 +43,22 @@
 	   "birhdayStep": "What's your birthday?",
 	   "genderStep":"Which fits you best?",
 	   "usernameStep":"Choose your @",
-	   "lastStep":"And the last bits..."
+	   "lastStep":"And the last bits...",
+	   "newEmail":"ross@yopmail.com",
+	   "fsname":"hom-d..o",
+	   "lname":"good-j..d",
+	   "invalidf":"111@$%dd",
+	   "errormsg":"Contains invalid characters"
 	},
 
 	"newsfeed":{
-        "peopleknow":"People you may know"
+        "peopleknow":"People you may know",
+		"comment":"nice"
 	},
 
     "product":{
 		"name":"shirt",
+		"prdname":"bag",
 		"showinfresult":"Showing results for shirt white",
 		"retailername":"ebay"
 	},
@@ -50,12 +74,21 @@
 		"videoUrl": "https://www.youtube.com/watch?v=qSlGMK9fpMs",
 		"newpost":"Posted a few seconds ago",
 		"question":"Help me to find cool shirt",
-		"recommend":"Cool laptop please check once"
+		"recommend":"Cool laptop please check once",
+		"withoutsingleproduct":"Add at least one product before submitting"
 	},
 
 	"profile":{
 		"firstname": "harry",
 		"edit":"Edit your details",
 		"changemail":"som@maildrop.cc"
+	},
+
+	"share":{
+		"otherprofile":"https://we.shop/+y9uWZ6",
+		"ownprofile":"https://we.shop/+3PRkD0",
+		"post":"https://we.shop/+aoSUcd",
+		"otheruser":"Vasyl Lagutin",
+		"ownuser":"smita patil"
 	}
 }

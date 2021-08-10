@@ -8,6 +8,10 @@ class Filter extends Page{
         return $(".gs61pw-0.kEbIaA .search-input");
     }
 
+    get suggestion(){
+        return $(".sc-1fz54jw-1.gHQIQQ .typeahead-container__content__primary")
+    }
+
     get priceDownArrow(){
         return $(".search-filter .gbhan4-0.closed:nth-child(1)")
     }

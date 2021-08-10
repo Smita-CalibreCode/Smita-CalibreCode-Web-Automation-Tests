@@ -41,6 +41,10 @@ get OkBtn(){
     return $(".sc-1cwhfm1-1.kRFMej .MuiButton-label")
 }
 
+get crossIcon(){
+    return $(".gxjw9i-6.cKPZJo")
+}
+
 get submitBtn(){
     return $(".MuiButtonBase-root.MuiButton-root.MuiButton-text.sc-1f7myeh-1 .MuiButton-label")
 }
@@ -82,23 +86,44 @@ get lookingForRecomd(){
 }
 
 get pleaseHelpMeToFind(){
-    return $(".question-editor-caption__container textarea:nth-child(1)")
+    return $(".question-editor-caption__container")
+    //(".question-editor-caption__container textarea:nth-child(1)")
      //return $(".z2assy-2.QcYzO .question-editor-caption textarea")
      //return $(".z2assy-2.QcYzO .question-editor-caption> div textarea")
+}
+
+get emoji(){
+    return $(".question-editor-emojis__icon .sc-1h603xn-0.RalLe")
+}
+
+get selectEmoji(){
+    return $(".emoji-mart-category:nth-child(2) li:nth-child(13) .emoji-mart-emoji:nth-child(1)")
+}
+
+get saveChnagesBtn(){
+    return $(".sc-1cwhfm1-1.kRFMej.styled-button-wrapper .MuiButton-label")
+}
+
+get continuePostBtn(){
+    return $(".sc-1081fs9-0.gjvevX.sc-1v1uga8-11.cpylpc")
 }
 
 get postAQueBtn(){
     return $(".MuiButtonBase-root.MuiButton-root.MuiButton-text.sc-1cwhfm1-0.esnvJk .MuiButton-label")
 }
 
-
-insertText(text) {
-    document.getElementById("description").value= text;
+get background(){
+    return $(".MuiDialog-container.jss25:nth-child(3) .fonts-item:nth-child(1)")
 }
 
 get weshoptext(){
     return $(".z2assy-8.hDjfXs");
 }
+
+get textSize(){
+    return $(".slider-top-label")
+}
+
 }
 
 export default new Post();

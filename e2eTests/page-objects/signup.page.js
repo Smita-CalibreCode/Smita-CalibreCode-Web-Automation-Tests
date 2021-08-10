@@ -64,6 +64,18 @@ class SignUp extends Page{
         return $(".copy.display-linebreak")
     }
 
+    get errormsgFirst(){
+        return $(".sc-1xf132m-0.jwTiyJ .form div.form-row:nth-child(1) .form-row-2:nth-child(1) .MuiFormControl-root .MuiFormHelperText-root")
+    }
+
+    get erromsgLast(){
+        return $(".sc-1xf132m-0.jwTiyJ .form div.form-row:nth-child(1) .form-row-2:nth-child(2) .MuiFormControl-root .MuiFormHelperText-root")
+    }
+
+    get eyeIcon(){
+        return $(".MuiIconButton-label .MuiSvgIcon-root")
+    }
+
     randomName() {
         var text = "";
         var prefix = "";
@@ -123,7 +135,7 @@ class SignUp extends Page{
         this.clickToContinue.click();
         browser.pause(2000);
         expect(this.welcomeText.getText()).to.eql(testData.signup.usernameStep);
-        browser.pause(4000);
+        browser.pause(5000);
         this.clickToContinue.waitForVisible();
         this.clickToContinue.click();
         expect(this.welcomeText.getText()).to.eql(testData.signup.lastStep);

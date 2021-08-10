@@ -19,6 +19,18 @@ class newsfeed extends Page{
     get like(){
         return $(".newsfeed-list-item:nth-child(3) #active-love")
     }
+
+    get otherPostComent(){
+        return $(".newsfeed-list-item:nth-child(3) .sc-1gpmt38-0.cCSJym:nth-child(3) .comment-create__row:nth-child(1) .sx8ryo-2.gljhMt .comment-create-input-textarea")
+    }
+
+    get postCommentBtn(){
+        return $(" .newsfeed-list-item:nth-child(3) .sc-1gpmt38-0:nth-child(3) .MuiButtonBase-root .MuiButton-label")
+    }
+
+    get postedComment(){
+        return $(".newsfeed-list-item:nth-child(3) .comment .bky81h-0.gEOQom:nth-child(1)")
+    }
 }
 
 export default new newsfeed();

@@ -3,6 +3,8 @@ import { expect } from 'chai';
 import testData from "../constants/testData.json";
 import homePage from "../page-objects/home.page.js";
 import newsFeed from '../page-objects/newsfeed.page';
+import gmail from '../page-objects/gmail.page'
+
 
 class Login extends Page{
 
@@ -150,6 +152,49 @@ class Login extends Page{
         return $(".MuiTypography-root.sc-1nn4qnz-1")
     }
 
+    get forgot(){
+        return $(".MuiInputBase-input.MuiInput-input")
+    }
+
+    get resetPasswordLabel(){
+        return $(".reset-link")
+    }
+
+    get yopmail(){
+        return $("input[placeholder='Enter your inbox here']")
+    }
+
+    get setNewPwd(){
+        return $("//*[text()='Set new password']")    
+    }
+
+    pass(index){
+        return $(`.content-container .form-row:nth-child(${index}) input`)
+    }
+
+    get success(){
+        return $(".header > h1")
+    }
+
+    get confirmPopup(){
+        return $(".body .body-copy")
+    }
+
+    get hereLink(){
+       return $(".body .body-copy > a ")
+    }
+
+    get userName(){
+       return $(".fbys6c-1.kmChJO.user-ellipsis")
+    }
+
+    get peopleIcon(){
+        return $(".mfiyyj-0.hSJwqF")
+    }
+
+    get setNewEmail(){
+        return $("//*[text()='Confirm your email address']")
+    }
     
     login(email,password){
         browser.pause(2000);

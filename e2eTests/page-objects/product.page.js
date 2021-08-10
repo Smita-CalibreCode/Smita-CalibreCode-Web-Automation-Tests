@@ -30,6 +30,7 @@ get share(){
 get copy(){
     return $(".MuiDialog-container:nth-child(3) .MuiButtonBase-root .MuiButton-label")
 }
+
 }
 
 export default new Product();
