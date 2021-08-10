@@ -13,7 +13,7 @@ import gmail from '../page-objects/gmail.page'
 
 var price2=200;
 
-describe.skip("WeShop - Create an account",() =>{
+describe("WeShop - Create an account",() =>{
     it("Verify that the user is redirected to the Create your account step when Create an account button is clicked", ()=>{
         browser.url(testData.weshop.homeurl);
         expect(homePage.welcome.isVisible()).to.eql(true);
@@ -30,9 +30,9 @@ describe.skip("WeShop - Create an account",() =>{
     })
 })
 
-describe.skip("WeShop - Login", () => {
+describe("WeShop - Login", () => {
 
-    it.skip("Verify that the user is redirected to the Login step when Login button is clicked", ()=>{
+    it("Verify that the user is redirected to the Login step when Login button is clicked", ()=>{
         browser.url(testData.weshop.homeurl);
         expect(homePage.welcome.isVisible()).to.eql(true);
         Login.logInPageBtn.waitForVisible();
@@ -41,7 +41,7 @@ describe.skip("WeShop - Login", () => {
         expect(Login.welcomeText.getText()).to.eql(testData.login.welcome);
     })
     
-    it.skip("Verify that user is able to login successfully using valid e-mail and password", ()=>{
+    it("Verify that user is able to login successfully using valid e-mail and password", ()=>{
         Login.login(testData.login.email,testData.login.password);
         Login.clickToContinueBtn.waitForVisible();
         Login.clickToContinueBtn.click();
@@ -55,17 +55,17 @@ describe.skip("WeShop - Login", () => {
         expect(homePage.welcome.isVisible()).to.eql(true);
     })   
 
-    it.skip("Verify that user is able to login successfully using valid username and password", ()=>{
+    it("Verify that user is able to login successfully using valid username and password", ()=>{
         Login.login(testData.login.username,testData.login.password);
         newsFeed.logo.waitForVisible();
         expect(newsFeed.logo.isVisible()).to.eql(true);
     })   
 
-    it.skip("Verify that user can logout successfully when user select Logout option", ()=>{
+    it("Verify that user can logout successfully when user select Logout option", ()=>{
         Login.logout();
     })
 
-    it.skip("Verify that reset password email is delivered instantly to the registered user's email",()=>{
+    it("Verify that reset password email is delivered instantly to the registered user's email",()=>{
         browser.url(testData.weshop.resetpassword);
         Login.welcomeText.waitForVisible();
         expect(Login.welcomeText.getText()).to.eql(testData.resetPwd.resetPwdHeading);
@@ -207,7 +207,7 @@ describe.skip("WeShop - Login", () => {
 
 });
 
-describe.skip("WeShop - Create post RAP", ()=>{
+describe("WeShop - Create post RAP", ()=>{
     it("Verify that the user is redirected to the Recommend a product step when Recommend a product button is clicked",()=>{
         Login.login(testData.login.email,testData.login.password);
         browser.pause(2000);
@@ -269,7 +269,7 @@ describe.skip("WeShop - Create post RAP", ()=>{
     })
 });
 
-describe.skip("WeShop - Create post AAQ - Asking about a specific product", ()=>{
+describe("WeShop - Create post AAQ - Asking about a specific product", ()=>{
 
     it("Verify that the user is redirected to the Ask a Question step when Ask a question button is clicked",()=>{
         Login.login(testData.login.email,testData.login.password);
@@ -318,7 +318,7 @@ describe.skip("WeShop - Create post AAQ - Asking about a specific product", ()=>
     })
 });
 
-describe.skip("WeShop - Create a post AAQ - Looking for recommendations?", ()=>{
+describe("WeShop - Create a post AAQ - Looking for recommendations?", ()=>{
 
     it("Verify that question created about a recommendation is displayed appropriately in Newsfeed",()=>{
         browser.pause(2000);
@@ -391,15 +391,31 @@ describe("WeShop - NewsFeed", ()=> {
     })
 
     it("Verify that comments added to questions by other users are displayed in Newsfeed",()=>{
-
+        browser.url(testData.weshop.homeurl);
+        browser.scroll(0,10000);
+        newsFeed.otherPostComent.waitForVisible();
+        newsFeed.otherPostComent.click();
+        newsFeed.otherPostComent.setValue(testData.newsfeed.comment);
+        newsFeed.postCommentBtn.waitForVisible();
+        newsFeed.postCommentBtn.click();
+        newsFeed.postedComment.waitForVisible();
+        expect(newsFeed.postedComment.getText()).to.eql(testData.newsfeed.comment);
     })
 
     it("Verify that comments added to own questions are displayed in Newsfeed",()=>{
-
+        browser.url(testData.weshop.homeurl);
+        browser.scroll(0,10000);
+        newsFeed.otherPostComent.waitForVisible();
+        newsFeed.otherPostComent.click();
+        newsFeed.otherPostComent.setValue(testData.newsfeed.comment);
+        newsFeed.postCommentBtn.waitForVisible();
+        newsFeed.postCommentBtn.click();
+        newsFeed.postedComment.waitForVisible();
+        expect(newsFeed.postedComment.getText()).to.eql(testData.newsfeed.comment);
     })
 });
 
-describe.skip("WeShop - Product",()=>{
+describe("WeShop - Product",()=>{
     it("Verify that the searched product name is displayed below the header Eg: showing results for Shirts", ()=>{
         Login.login(testData.login.email, testData.login.password);
         filterPage.serachBar.waitForVisible();
@@ -433,7 +449,7 @@ describe.skip("WeShop - Product",()=>{
     })
 });
 
-describe.skip("WeShop - Search",()=>{
+describe("WeShop - Search",()=>{
 
     it("Verify that appropriate search results when suggested search keyword in the Search field is selected",()=>{
         Login.login(testData.login.email, testData.login.password);
@@ -459,7 +475,7 @@ describe.skip("WeShop - Search",()=>{
     })
 });
 
-describe.skip("WeShop - filter", ()=>{
+describe("WeShop - filter", ()=>{
     it("Verify that the results matching the specified price range are displayed when the search is filtered", ()=>{
         Login.login(testData.login.email, testData.login.password);
         browser.pause(2000);
@@ -518,7 +534,7 @@ describe.skip("WeShop - filter", ()=>{
     })
 });
 
-describe.skip("WeShop - Account",()=>{
+describe("WeShop - Account",()=>{
     it("Verify that Change password button is activated when the user adds same password string in Password and Repeat password", ()=>{
         Login.login(testData.login.email, testData.login.password); 
         browser.pause(1000);
@@ -569,7 +585,7 @@ describe.skip("WeShop - Account",()=>{
     })
 });
 
-describe.skip("WeShop - Profile",()=>{
+describe("WeShop - Profile",()=>{
     it("Verify that user is redirected to the Edit profile Information step when Edit profile button is tapped", ()=>{
         Login.login(testData.login.email, testData.login.password); 
         browser.pause(1000);
@@ -586,7 +602,7 @@ describe.skip("WeShop - Profile",()=>{
     })
 });
 
-describe.skip("WeShop - Share",()=>{
+describe("WeShop - Share",()=>{
 
     it("Verify that user can see profile of other user when Profile link of other user is launched",()=>{
         browser.url(testData.share.otherprofile);

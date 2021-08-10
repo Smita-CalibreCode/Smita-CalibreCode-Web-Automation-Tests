@@ -65,7 +65,5 @@ describe("Create an account", ()=>{
         expect(signup.erromsgLast.getText()).to.eql(testData.signup.errormsg);
     })
 
-    it.skip("Verify that password characters are unmaked when the eye icon is clicked",()=>{
-
-    })
+    
 })
